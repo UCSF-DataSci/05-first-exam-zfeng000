@@ -2,12 +2,12 @@ import random
 
 def gen_random_dna_sequence(length): 
     """generate a random DNA sequence for a specified length"""
-    return ''.join(random.choice('ACGT') for _ in range(length))
+    return ''.join(random.choice('ACGT') for _ in range(length)) # join() concatenates
 
 def write_fasta_file(filename, sequence, line_length = 80):
     """write the DNA sequence to a FASTA file with the specified line length"""
     with open(filename, 'w') as fasta_file:
-        for i in range(0, len(sequence), line_length):
+        for i in range(0, len(sequence), line_length): # use a loop to split the string into chunks of 80 characters
             fasta_file.write(sequence[i:i+line_length] + '\n')
 
 # use the defined function to generate the random dna sequence of 1 million base pairs
